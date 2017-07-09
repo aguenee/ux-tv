@@ -4,6 +4,16 @@ UX-TV
 Hello! :)
 
 
+Usage
+---
+ 
+Start the development server with this command:
+ 
+```
+npm start
+```
+
+
 Setup
 ---
  
