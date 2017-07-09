@@ -2,7 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { HashRouter, BrowserHistory } from 'react-router-dom'
 
-import App from './components/App';
+import App from './App';
+
 
 document.addEventListener('DOMContentLoaded', function() {
 	ReactDOM.render(

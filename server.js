@@ -7,6 +7,9 @@ const app = express();
 const compiler = webpack(webpackConfig);
  
 app.use(express.static(__dirname + '/public'));
+app.use('/css', express.static(__dirname + '/node_modules/bootstrap/dist/css/'));
+app.use('/js', express.static(__dirname + '/node_modules/bootstrap/dist/js/'));
+app.use('/fonts', express.static(__dirname + '/node_modules/bootstrap/dist/fonts/'));
  
 app.use(webpackDevMiddleware(compiler, {
   hot: true,
@@ -19,7 +22,7 @@ app.use(webpackDevMiddleware(compiler, {
 }));
  
 const server = app.listen(3000, function() {
-  const host = 'localhost';
+  const host = 'localhost/#/home';
   const port = server.address().port;
-  console.log('Example app listening at http://%s:%s', host, port);
+  console.log('UX-TV app listening at http://%s:%s', host, port);
 });
