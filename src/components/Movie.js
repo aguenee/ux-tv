@@ -1,11 +1,11 @@
 import React from 'react';
 
-import FavoriteButton from './FavoriteButtonComponent';
+import FavoriteButton from './FavoriteButton';
  
 /**
- * Movie item
+ * Movie component: display a single movie item
  */
-class MovieComponent extends React.Component {
+class Movie extends React.Component {
    constructor(props) {
       super(props);
    }
@@ -29,4 +29,13 @@ class MovieComponent extends React.Component {
    }
 }
 
-export default MovieComponent;
+Movie.defaultProps = {
+   info: {}
+}
+
+Movie.propTypes = {
+   info: React.PropTypes.object.isRequired,
+   onChange: React.PropTypes.func.isRequired
+}
+
+export default Movie;

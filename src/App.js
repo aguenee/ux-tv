@@ -1,9 +1,9 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom'; 
 
-import Header from './components/HeaderComponent';
-import Footer from './components/FooterComponent';
-import MoviesList from './components/MoviesListComponent';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import MovieList from './components/MovieList';
 
 import MovieData from './data/MovieData';
 
@@ -23,20 +23,20 @@ class App extends React.Component {
    render() {
       return (
          <div>
-            <Header />
+            <Header brand="UX-TV" />
 
             <main className="container-fluid">
                <Switch>
                   <Route exact path='/home' component={
-                     () => (<MoviesList movies={this.state.movies} />)
+                     () => (<MovieList movies={this.state.movies} />)
                   } />
                   <Route exact path='/my-favorite-movies' component={
-                     () => (<MoviesList movies={this.state.movies} display="liked" />)
+                     () => (<MovieList movies={this.state.movies} display="liked" />)
                   } />
                </Switch>
             </main>
            
-            <Footer />
+            <Footer brand="UX-TV" />
          </div>
       );
    }

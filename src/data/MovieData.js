@@ -1,5 +1,5 @@
 /**
- * Movies data
+ * Movie data: "movies database"
  */
 const MovieData = [
 	{

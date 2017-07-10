@@ -3,6 +3,8 @@ UX-TV
  
 Hello! :)
 
+UX-TV, made with ReactJS.
+
 
 Usage
 ---

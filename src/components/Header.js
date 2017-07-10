@@ -1,11 +1,10 @@
 import React from 'react';
-
 import { NavLink } from 'react-router-dom'; 
  
 /**
  * Page header
  */
-class HeaderComponent extends React.Component {
+class Header extends React.Component {
    constructor(props) {
       super(props);
    }
@@ -22,7 +21,7 @@ class HeaderComponent extends React.Component {
                         <span className="icon-bar"></span>
                         <span className="icon-bar"></span>
                      </button>
-                     <NavLink to='/home' className="navbar-brand">UX-TV</NavLink>
+                     <NavLink to='/home' className="navbar-brand">{this.props.brand}</NavLink>
                   </div>
                   <div id="navbar" className="navbar-collapse collapse">
                      <ul className="nav navbar-nav navbar-right">
@@ -41,4 +40,12 @@ class HeaderComponent extends React.Component {
    }
 }
 
-export default HeaderComponent;
+Header.defaultProps = {
+  brand: ""
+}
+
+Header.propTypes = {
+  brand: React.PropTypes.string.isRequired
+}
+
+export default Header;

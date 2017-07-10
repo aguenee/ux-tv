@@ -1,12 +1,12 @@
 import React from 'react';
 
-import Movie from './MovieComponent';
-import NoResult from './NoResultComponent';
+import Movie from './Movie';
+import NoResultMessage from './NoResultMessage';
 
 /**
- * Home page
+ * Movie list component: list all movies
  */
-class MoviesListComponent extends React.Component {
+class MovieList extends React.Component {
    constructor(props) {
       super(props);
 
@@ -60,19 +60,19 @@ class MoviesListComponent extends React.Component {
             </div>
          );
       } else {
-         return <NoResult />;
+         return <NoResultMessage message={"Oh non ! Il n'y a aucun film dans cette liste. :("} />;
       }
    }
 }
 
-MoviesListComponent.defaultProps = {
+MovieList.defaultProps = {
    movies: [],
    display: "all",
 }
 
-MoviesListComponent.propTypes = {
+MovieList.propTypes = {
    movies: React.PropTypes.array.isRequired,
    display: React.PropTypes.string,
 }
 
-export default MoviesListComponent;
+export default MovieList;

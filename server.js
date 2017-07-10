@@ -7,9 +7,9 @@ const app = express();
 const compiler = webpack(webpackConfig);
  
 app.use(express.static(__dirname + '/public'));
-app.use('/css', express.static(__dirname + '/node_modules/bootstrap/dist/css/'));
-app.use('/js', express.static(__dirname + '/node_modules/bootstrap/dist/js/'));
-app.use('/fonts', express.static(__dirname + '/node_modules/bootstrap/dist/fonts/'));
+app.use('/vendor/css', express.static(__dirname + '/node_modules/bootstrap/dist/css/'));
+app.use('/vendor/js', express.static(__dirname + '/node_modules/bootstrap/dist/js/'));
+app.use('/vendor/fonts', express.static(__dirname + '/node_modules/bootstrap/dist/fonts/'));
  
 app.use(webpackDevMiddleware(compiler, {
   hot: true,

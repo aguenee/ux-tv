@@ -1,9 +1,9 @@
 import React from 'react';
  
 /**
- * Favorite button
+ * Favorite button: clicking on it add a movie in your favorites list
  */
-class FavoriteButtonComponent extends React.Component {
+class FavoriteButton extends React.Component {
    constructor(props) {
       super(props);
    }
@@ -19,4 +19,13 @@ class FavoriteButtonComponent extends React.Component {
    }
 }
 
-export default FavoriteButtonComponent;
+FavoriteButton.defaultProps = {
+   active: false
+}
+
+FavoriteButton.propTypes = {
+   active: React.PropTypes.bool,
+   onClick: React.PropTypes.func.isRequired
+}
+
+export default FavoriteButton;
