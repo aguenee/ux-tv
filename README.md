@@ -30,3 +30,11 @@ Compile
 ```
 npm run compile
 ```
+
+
+Test
+---
+
+```
+npm test
+```

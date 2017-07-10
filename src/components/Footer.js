@@ -13,7 +13,7 @@ class Footer extends React.Component {
       return (
          <footer className="footer">
             <div className="container-fluid">
-              <p className="text-muted text-center">© {this.props.brand} &middot; {this.props.year}</p>
+              <p className="text-muted text-center">{"© " + this.props.brand + " - " + this.props.year}</p>
             </div>
          </footer>
       );
