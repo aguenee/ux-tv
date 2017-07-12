@@ -38,3 +38,10 @@ Test
 ```
 npm test
 ```
+
+
+Links
+---
+http://andrewhfarmer.com/react-from-scratch/
+https://www.youtube.com/watch?v=bnWIBeImVKg
+https://blog.algolia.com/how-we-unit-test-react-components-using-expect-jsx/
