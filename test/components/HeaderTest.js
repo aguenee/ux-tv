@@ -1,15 +1,18 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom'; 
+import ReactTestUtils from 'react-dom/test-utils';
+import ShallowRenderer from 'react-test-renderer/shallow';
 import expect from 'expect';
-import { createRenderer } from 'react-dom/test-utils';
+import { NavLink } from 'react-router-dom';
 
-import Header from '../src/components/Header';
+import Header from '../../src/components/Header';
 
 describe('components/Header', () => {
-	it('works', () => {
-		let renderer = createRenderer();
-		renderer.render(<Header brand="My super brand" />);
-		let actualElement = renderer.getRenderOutput();
+
+	it('renders component', () => {
+		let shallowRenderer = new ShallowRenderer();
+		shallowRenderer.render(<Header brand="My super brand" />);
+		let headerInstance = shallowRenderer.getRenderOutput();
+
 		let expectedElement = (
          <header>
             <nav className="navbar navbar-default">
@@ -37,6 +40,7 @@ describe('components/Header', () => {
             </nav>
          </header>
 		);
-		expect(actualElement).toEqual(expectedElement);
+		expect(headerInstance).toEqual(expectedElement);
 	});
+
 });

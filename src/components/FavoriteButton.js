@@ -6,13 +6,23 @@ import React from 'react';
 class FavoriteButton extends React.Component {
    constructor(props) {
       super(props);
+
+      this.handleClick = this.handleClick.bind(this);
+   }
+
+   handleClick() {
+      if (!this.props.onClick) {
+         return false;
+      }
+
+      this.props.onClick();
    }
  
    render() {
       var className = this.props.active ? "btn-danger" : "btn-default";
 
       return (
-         <button className={"btn " + className} role="button" onClick={this.props.onClick}>
+         <button className={"btn " + className} role="button" onClick={this.handleClick}>
             <span className="glyphicon glyphicon-heart"></span>
          </button>
       );
@@ -25,7 +35,7 @@ FavoriteButton.defaultProps = {
 
 FavoriteButton.propTypes = {
    active: React.PropTypes.bool,
-   onClick: React.PropTypes.func.isRequired
+   onClick: React.PropTypes.func
 }
 
 export default FavoriteButton;

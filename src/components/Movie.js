@@ -8,6 +8,16 @@ import FavoriteButton from './FavoriteButton';
 class Movie extends React.Component {
    constructor(props) {
       super(props);
+
+      this.handleClick = this.handleClick.bind(this);
+   }
+
+   handleClick() {
+      if (!this.props.onChange) {
+         return false;
+      }
+      
+      this.props.onChange();
    }
  
    render() {
@@ -20,7 +30,7 @@ class Movie extends React.Component {
                   <h5>{this.props.info.director}</h5>
                   <p>{this.props.info.synopsis}</p>
                   <p>
-                     <FavoriteButton active={this.props.info.liked} onClick={this.props.onChange} />
+                     <FavoriteButton active={this.props.info.liked} onClick={this.handleClick} />
                   </p>
                </div>
             </div>
@@ -35,7 +45,7 @@ Movie.defaultProps = {
 
 Movie.propTypes = {
    info: React.PropTypes.object.isRequired,
-   onChange: React.PropTypes.func.isRequired
+   onChange: React.PropTypes.func
 }
 
 export default Movie;
