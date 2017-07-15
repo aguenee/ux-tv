@@ -55,3 +55,5 @@ https://facebook.github.io/react/docs/shallow-renderer.html
 https://facebook.github.io/react/docs/test-utils.html
 
 http://blog.sodhanalibrary.com/2016/11/reacttestutils-tutorial-with-examples.html
+
+https://reactcheatsheet.com

@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Movie from './Movie';
-import NoResultMessage from './NoResultMessage';
 
 /**
  * Movie list component: list all movies
@@ -19,12 +18,12 @@ class MovieList extends React.Component {
       this.handleChange = this.handleChange.bind(this);
    }
 
-   handleChange(key, event) {
-      var movies = this.state.movies;
-      var movie = this.state.movies[key];
+   handleChange(movieId, likedValue) {
+      let movies = this.state.movies;
+      let movie = this.state.movies[movieId];
 
-      movie.liked = !movie.liked;
-      movies[key] = movie;
+      movie.liked = likedValue;
+      movies[movieId] = movie;
 
       this.setState({
          movies: movies
@@ -32,27 +31,29 @@ class MovieList extends React.Component {
    }
 
    getMoviesList(display) {
-      var self = this;
+      let self = this;
 
-      var movies = [];
+      let movies = [];
       this.state.movies.map(function (value, key) {
-         var shouldBeDisplayed = (display === 'liked' && value.liked) || display === 'all';
+         let shouldBeDisplayed = (display === 'liked' && value.liked) || display === 'all';
          
          if (shouldBeDisplayed) {
             movies.push(
                <Movie
+                  id={key}
                   ref={key}
                   key={'movie-' + key}
                   info={value}
-                  onChange={self.handleChange.bind(this, key)} />
+                  onChange={self.handleChange} />
             );            
          }
       });
+
       return movies;
    }
  
    render() {
-      var movies = this.getMoviesList();
+      let movies = this.getMoviesList();
 
       if (movies.length > 0) {
          return (
@@ -61,7 +62,11 @@ class MovieList extends React.Component {
             </div>
          );
       } else {
-         return <NoResultMessage message={"Oh non ! Il n'y a aucun film dans cette liste. :("} />;
+         return (
+            <div className="alert alert-info" role="alert">
+               <strong>Dommage !</strong> Il n'y a aucun film dans cette liste...
+            </div>
+         );
       }
    }
 }

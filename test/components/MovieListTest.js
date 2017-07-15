@@ -10,12 +10,26 @@ import MovieData from '../../src/data/MovieData';
 
 describe('components/MovieList', () => {
 
-   it('renders component', () => {
+	it('renders component', () => {
    		let shallowRenderer = new ShallowRenderer();
 		shallowRenderer.render(<MovieList movies={MovieData} />);
 		let movieListInstance = shallowRenderer.getRenderOutput()
 		expect(movieListInstance).toExist();
    	});
+
+	it('lists the right number of movies', () => {
+		let MovieListInstance = ReactTestUtils.renderIntoDocument(
+			<MovieList movies={MovieData} />
+		);
+
+		let movieElements = ReactTestUtils.scryRenderedDOMComponentsWithClass(MovieListInstance, 'movie');
+		expect(movieElements.length).toEqual(MovieListInstance.props.movies.length);
+	});
+
+	it('updates correctly movies list', () => {
+
+
+	});
 
   	/*it('toggles its class on click event', () => {
 		let FavoriteButtonInstance = ReactTestUtils.renderIntoDocument(

@@ -10,28 +10,36 @@ class Movie extends React.Component {
    constructor(props) {
       super(props);
 
+      this.state = {
+         liked: this.props.info.liked
+      };
       this.handleClick = this.handleClick.bind(this);
    }
 
-   handleClick() {
-      if (!this.props.onChange) {
-         return false;
+   handleClick(likedValue) {
+      if (this.props.onChange) {
+         this.setState(
+            { liked: likedValue },
+            this.props.onChange(this.props.id, likedValue)
+         );
+      } else {
+         this.setState({
+            liked: likedValue
+         });
       }
-      
-      this.props.onChange();
    }
  
    render() {
       return (
          <div className="col-sm-4 col-md-4">
-            <div className="thumbnail">
+            <div className="thumbnail movie">
                <img alt={this.props.info.title} src={this.props.info.image} />
                <div className="caption">
                   <h3>{this.props.info.title}</h3>
                   <h5>{this.props.info.director}</h5>
                   <p>{this.props.info.synopsis}</p>
                   <p>
-                     <FavoriteButton active={this.props.info.liked} onClick={this.handleClick} />
+                     <FavoriteButton active={this.state.liked} onClick={this.handleClick} />
                   </p>
                </div>
             </div>
