@@ -11,7 +11,7 @@ describe('components/Header', () => {
 	it('renders component', () => {
 		let shallowRenderer = new ShallowRenderer();
 		shallowRenderer.render(<Header brand="My super brand" />);
-		let headerInstance = shallowRenderer.getRenderOutput();
+		let HeaderInstance = shallowRenderer.getRenderOutput();
 
 		let expectedElement = (
          <header>
@@ -40,7 +40,7 @@ describe('components/Header', () => {
             </nav>
          </header>
 		);
-		expect(headerInstance).toEqual(expectedElement);
+		expect(HeaderInstance).toEqual(expectedElement);
 	});
 
 });

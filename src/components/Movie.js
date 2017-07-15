@@ -13,10 +13,10 @@ class Movie extends React.Component {
       this.state = {
          liked: this.props.info.liked
       };
-      this.handleClick = this.handleClick.bind(this);
+      this.handleChange = this.handleChange.bind(this);
    }
 
-   handleClick(likedValue) {
+   handleChange(likedValue) {
       if (this.props.onChange) {
          this.setState(
             { liked: likedValue },
@@ -39,7 +39,7 @@ class Movie extends React.Component {
                   <h5>{this.props.info.director}</h5>
                   <p>{this.props.info.synopsis}</p>
                   <p>
-                     <FavoriteButton active={this.state.liked} onClick={this.handleClick} />
+                     <FavoriteButton active={this.state.liked} onClick={this.handleChange} />
                   </p>
                </div>
             </div>

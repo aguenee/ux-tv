@@ -21,4 +21,39 @@ describe('components/FavoriteButton', () => {
       expect(FavoriteButtonInstance).toEqual(expectedElement);
    });
 
+   it('calls handleClick function on click event', (done) => {
+      let handleClickTest = () => {
+         done();
+      };
+
+      let FavoriteButtonInstance = ReactTestUtils.renderIntoDocument(
+         <FavoriteButton active={false} onClick={handleClickTest} />
+      );
+      let buttonElement = ReactTestUtils.findRenderedDOMComponentWithClass(FavoriteButtonInstance, 'btn');
+      
+      ReactTestUtils.Simulate.click(buttonElement);
+   });
+
+   it('toggles active state on click event', () => {
+      let FavoriteButtonInstance = ReactTestUtils.renderIntoDocument(
+         <FavoriteButton active={false} />
+      );
+      let buttonElement = ReactTestUtils.findRenderedDOMComponentWithClass(FavoriteButtonInstance, 'btn');
+      let activeValue = !FavoriteButtonInstance.state.active;
+
+      ReactTestUtils.Simulate.click(buttonElement);
+      expect(FavoriteButtonInstance.state.active).toEqual(activeValue);
+   });
+
+   it('toggles className on click event', () => {
+      let FavoriteButtonInstance = ReactTestUtils.renderIntoDocument(
+         <FavoriteButton active={false} />
+      );
+      let buttonElement = ReactTestUtils.findRenderedDOMComponentWithClass(FavoriteButtonInstance, 'btn');
+      let toggledClass = buttonElement.className.indexOf('btn-default') !== -1 ? 'btn-danger' : 'btn-default';
+
+      ReactTestUtils.Simulate.click(buttonElement);
+      expect(buttonElement.className).toEqual('btn ' + toggledClass);
+   });
+
 });

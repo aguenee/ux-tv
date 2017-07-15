@@ -10,7 +10,7 @@ describe('components/Footer', () => {
 	it('renders component', () => {
 		let shallowRenderer = new ShallowRenderer();
 		shallowRenderer.render(<Footer brand="My super brand" year={2017} />);
-		let footerInstance = shallowRenderer.getRenderOutput();
+		let FooterInstance = shallowRenderer.getRenderOutput();
 		
 		let expectedElement = (
          <footer className="footer">
@@ -19,7 +19,7 @@ describe('components/Footer', () => {
             </div>
          </footer>
 		);
-		expect(footerInstance).toEqual(expectedElement);
+		expect(FooterInstance).toEqual(expectedElement);
 	});
 
 });
