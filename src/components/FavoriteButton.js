@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
  
 /**
  * Favorite button: clicking on it add a movie in your favorites list
@@ -34,8 +35,8 @@ FavoriteButton.defaultProps = {
 }
 
 FavoriteButton.propTypes = {
-   active: React.PropTypes.bool,
-   onClick: React.PropTypes.func
+   active: PropTypes.bool,
+   onClick: PropTypes.func
 }
 
 export default FavoriteButton;

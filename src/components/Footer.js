@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 /**
  * Page footer
@@ -26,8 +27,8 @@ Footer.defaultProps = {
 }
 
 Footer.propTypes = {
-  brand: React.PropTypes.string.isRequired,
-  year: React.PropTypes.number
+  brand: PropTypes.string.isRequired,
+  year: PropTypes.number
 }
 
 export default Footer;

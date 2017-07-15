@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import Movie from './Movie';
 import NoResultMessage from './NoResultMessage';
@@ -71,8 +72,8 @@ MovieList.defaultProps = {
 }
 
 MovieList.propTypes = {
-   movies: React.PropTypes.array.isRequired,
-   display: React.PropTypes.string,
+   movies: PropTypes.array.isRequired,
+   display: PropTypes.string,
 }
 
 export default MovieList;

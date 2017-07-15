@@ -1,5 +1,6 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom'; 
+import { NavLink } from 'react-router-dom';
+import PropTypes from 'prop-types';
  
 /**
  * Page header
@@ -45,7 +46,7 @@ Header.defaultProps = {
 }
 
 Header.propTypes = {
-  brand: React.PropTypes.string.isRequired
+  brand: PropTypes.string.isRequired
 }
 
 export default Header;

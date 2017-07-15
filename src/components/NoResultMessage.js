@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
  
 /**
  * No result message: displayed when no movie has been found
@@ -22,7 +23,7 @@ NoResultMessage.defaultProps = {
 }
 
 NoResultMessage.propTypes = {
-   message: React.PropTypes.string
+   message: PropTypes.string
 }
 
 export default NoResultMessage;

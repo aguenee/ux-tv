@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import FavoriteButton from './FavoriteButton';
  
@@ -44,8 +45,8 @@ Movie.defaultProps = {
 }
 
 Movie.propTypes = {
-   info: React.PropTypes.object.isRequired,
-   onChange: React.PropTypes.func
+   info: PropTypes.object.isRequired,
+   onChange: PropTypes.func
 }
 
 export default Movie;
