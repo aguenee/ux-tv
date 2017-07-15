@@ -29,10 +29,14 @@ describe('components/Header', () => {
                   <div id="navbar" className="navbar-collapse collapse">
                      <ul className="nav navbar-nav navbar-right">
                         <li>
-                           <NavLink to='/home' activeStyle={{ backgroundColor: '#e7e7e7' }}>Tous les films</NavLink>
+                           <NavLink to='/home' activeStyle={{ backgroundColor: '#e7e7e7' }}>
+                              <span className="glyphicon glyphicon-home"></span>&nbsp;&nbsp;Tous les films
+                           </NavLink>
                         </li>
                         <li>
-                           <NavLink to='/my-favorite-movies' activeStyle={{ backgroundColor: '#e7e7e7' }}>Favoris</NavLink>
+                           <NavLink to='/my-favorite-movies' activeStyle={{ backgroundColor: '#e7e7e7' }}>
+                              <span className="glyphicon glyphicon-heart"></span>&nbsp;&nbsp;Mes favoris
+                           </NavLink>
                         </li>
                      </ul>
                   </div>
