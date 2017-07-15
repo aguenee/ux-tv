@@ -1,9 +1,7 @@
 UX-TV
 ---
- 
-Hello! :)
 
-UX-TV, made with ReactJS.
+UX-TV, an app made with ReactJS.
 
 
 Usage
