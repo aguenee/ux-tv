@@ -38,9 +38,7 @@ class Movie extends React.Component {
                   <h3>{this.props.info.title}</h3>
                   <h5>{this.props.info.director}</h5>
                   <p>{this.props.info.synopsis}</p>
-                  <p>
-                     <FavoriteButton active={this.state.liked} onClick={this.handleChange} />
-                  </p>
+                  <FavoriteButton active={this.state.liked} onClick={this.handleChange} />
                </div>
             </div>
          </div>

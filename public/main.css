@@ -1,0 +1,13 @@
+body {
+	background: url('img/geometry.png') repeat;
+}
+
+h5 {
+	font-weight: bold;
+    color: gray;
+	line-height: 1.5em;
+}
+
+.navbar {
+	margin-top: 20px;
+}
