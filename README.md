@@ -3,23 +3,24 @@ UX-TV
 
 UX-TV, an app made with ReactJS.
 
-
-Usage
----
- 
-Start the development server with this command:
- 
-```
-npm start
-```
-
-
 Setup
 ---
  
 ```
 npm install
 ```
+
+
+Usage
+---
+ 
+Start the development server:
+ 
+```
+npm start
+```
+
+(URL: http://localhost:3000/#/home)
 
 
 Compile
